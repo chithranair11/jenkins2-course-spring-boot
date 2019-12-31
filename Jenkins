@@ -1,19 +1,21 @@
 pipeline {
   agent any
   stages {
-    stage('Source') { 
+    stage('Source') {
       steps {
-			// Some Step
+// Some Step
+checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/Bhagyabati/jenkins2-course-spring-boot.git']]])
       }
     }
-    stage('Compile') { 
+    stage('Compile') {
       tools {
         // Specify Tool Name from your global tool configuration
-		jdk 'jdk8'
-        maven 'maven-3.6.1'
+jdk 'jdk8'
+        maven 'apache-maven-3.6.1'
       }
       steps {
-			// Some Step
+// Some Step
+powershell label: '', script: 'mvn -f spring-boot-samples/spring-boot-sample-atmosphere/pom.xml clean package'
       }
     }
   }
