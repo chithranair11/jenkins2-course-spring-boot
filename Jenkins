@@ -21,12 +21,14 @@ powershell label: '', script: 'mvn -f spring-boot-samples/spring-boot-sample-atm
     
     stage('Email Notification')
     {
+    steps{
     mail bcc: '', body: '''Hi,
 
     Welcome to Jenkins email notifications.
 
 Thanks ,
 Chithra Nair''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'testautomation865@gmail.com'
+}
     }
   }
 }
