@@ -18,5 +18,15 @@ jdk 'jdk8'
 powershell label: '', script: 'mvn -f spring-boot-samples/spring-boot-sample-atmosphere/pom.xml clean package'
       }
     }
+    
+    stage('Email Notification'
+    {
+    mail bcc: '', body: '''Hi,
+
+    Welcome to Jenkins email notifications.
+
+Thanks ,
+Chithra Nair''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'testautomation865@gmail.com'
+    }
   }
 }
