@@ -19,7 +19,7 @@ powershell label: '', script: 'mvn -f spring-boot-samples/spring-boot-sample-atm
       }
     }
     
-    stage('Email Notification'
+    stage('Email Notification')
     {
     mail bcc: '', body: '''Hi,
 
